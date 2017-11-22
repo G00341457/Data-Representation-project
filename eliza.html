@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+        <script>
+            function handleElizaResponse() {
+                // does stuff
+            }
+        
+            function loadXMLDoc(filename, form) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", filename, true);
+                xhttp.send();
+            }
+            
+            function loadXMLDocPOST(filename, form) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                    
+                        //document.getElementById("lastmessage").innerHTML = form.userinput.value;
+                        document.getElementById("lastmessage").innerHTML = this.responseText;
+                        document.getElementById("chatlog").innerHTML = document.getElementById("chatlog").innerHTML + "<br> o " + 
+                                                                       form.userinput.value + "<br>" + this.responseText;
+                    }
+                };            
+                xhttp.open("POST", filename, true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("message=" + form.userinput.value);
+            }
+        </script>
+    <body>
+
+        <h1>Contact</h1>
+        <form method="POST" action="error.html" onSubmit="loadXMLDocPOST('echomessage.html', this);return false;">
+            <label>Just type:</label> 
+            <input type="text" name="userinput">
+            <input type="submit">
+        </form>
+
+        <div id="lastmessage">
+        ...
+        </div>
+        
+        <p>
+        
+        <div id="chatlog">
+        ...
+        </div>        
+        
+
+
+    </body>
+</html>
