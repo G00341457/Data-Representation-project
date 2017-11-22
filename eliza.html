@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-        <script>
-            function handleElizaResponse() {
-                // does stuff
-            }
+<html lang ="en">
+    <head>
+            <title>Eliza</title>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+        <script>
+            //addapted from https://www.w3schools.com/xml/xml_http.asp
             function loadXMLDoc(filename, form) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("demo").innerHTML = this.responseText;
+                        document.getElementById("eliza").innerHTML = this.responseText;
                     }
                 };
                 xhttp.open("GET", filename, true);
@@ -22,7 +29,7 @@
                     
                         //document.getElementById("lastmessage").innerHTML = form.userinput.value;
                         document.getElementById("lastmessage").innerHTML = this.responseText;
-                        document.getElementById("chatlog").innerHTML = document.getElementById("chatlog").innerHTML + "<br> o " + 
+                        document.getElementById("chatlog").innerHTML = document.getElementById("chatlog").innerHTML + "<br> - " + 
                                                                        form.userinput.value + "<br>" + this.responseText;
                     }
                 };            
@@ -31,11 +38,12 @@
                 xhttp.send("message=" + form.userinput.value);
             }
         </script>
+    </head>
     <body>
-
-        <h1>Contact</h1>
+       <div class="container-fluid">
+        <h1>Eliza</h1>
         <form method="POST" action="error.html" onSubmit="loadXMLDocPOST('echomessage.html', this);return false;">
-            <label>Just type:</label> 
+            <label>Talk to Eliza</label> 
             <input type="text" name="userinput">
             <input type="submit">
         </form>
@@ -49,7 +57,7 @@
         <div id="chatlog">
         ...
         </div>        
-        
+        <div>
 
 
     </body>
