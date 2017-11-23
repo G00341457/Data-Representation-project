@@ -16,18 +16,37 @@ func ElizaResponse(input string) string {
         return "Why don’t you tell me more about your father?"
     }
     
+    if matched, _ := regexp.MatchString(`(?i).*\bmother\b.*`, input); matched {
+        
+            return "Why don’t you tell me more about your mother?"
+        }
+
+        r := regexp.MustCompile(`I need (.*)`)
+        
+        if matched := r.MatchString(input); matched {
+        
+            return r.ReplaceAllString(input, "Why do you need $1?")
+        }    
+
     re := regexp.MustCompile(`(?i)I am ([^.?!]*)[.?!]?`)
     
     if matched := re.MatchString(input); matched {
     
-        return re.ReplaceAllString(input, "How do you know you are $1?")
-    }    
+        return re.ReplaceAllString(input, "Hi $1, I am Eliza?")
+    }   
+    
+    
     
     answers := []string{
     
         "I’m not sure what you’re trying to say. Could you explain it to me?",    
         "How does that make you feel?",   
         "Why do you say that?",
+        "Why dont you tell me about it?",
+        "Can I help you with that?",
+        "Very Interesting",
+        "Tell me more",
+        "Use adjectives",
     }
     
     return answers[rand.Intn(len(answers))]
