@@ -5,7 +5,7 @@
 This is my Eliza project, To get it running
 1) Clone it from the Git repository
 2) copy it into your text editor
-3)go cmd prompt
+3)go to the cmd prompt
 4) Cd into eliza
 5) Type go build Eliza.go
 6) Type go run Eliza.go
