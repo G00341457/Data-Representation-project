@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang ="en">
     <head>
-    
-            <title>Eliza</title>
+        <link rel="stylesheet" href="css/style.css">
+        
+         <style>
+         
+         #chatlog{
+             background-color: lightblue;
+         }
+         body {
+             background-image: url("https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/MSR-AI_Brain-Hero_sm-800x550.jpg");
+         }
+         .jumbotron{
+             background-image: url("https://www.technewsworld.com/article_images/story_graphics_xlarge/xl-2016-ai-robot-1.jpg");
+         }
+         </Style>
+            <title>eliza</title>
             <!-- Required meta tags -->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,26 +59,27 @@
     <body>
       <div class="container-fluid"style="background-image: url(AI_Cortana.jpg)">
           
-        <h1>Eliza</h1>
         
-                <div class="jumbotron" style="background-color:#A05F5F">
+        <footer>
+                <div class="jumbotron" style="background-color:darkblue">
                         <form method="POST" action="error.html" onSubmit="loadXMLDocPOST('echomessage.html', this);return false;">
+                                <h1>Eliza</h1>
                                 <h3>Talk to Eliza</h3>
                                 <input type="text" name="userinput">
                                 <input type="submit">
                             </form>
                     
                             <div id="lastmessage">
-                            ...
+                            Eliza:
                             </div>
                             
                             <p>
                             
                             <div id="chatlog">
-                            ...
+                            -
                             </div> 
                 </div>
-      
+        </footer>
     <div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
