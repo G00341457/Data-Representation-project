@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang ="en">
     <head>
-        <link rel="stylesheet" href="css/style.css">
+        
         
          <style>
          
-         #chatlog{
-             background-color: lightblue;
-         }
          body {
-             background-image: url("https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/MSR-AI_Brain-Hero_sm-800x550.jpg");
+             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTad11PuOdFg1o1LRv2He-gLNVs--BxQfT-vWpRSMio832bahp3ow");
+             resize: 100%;
          }
          .jumbotron{
-             background-image: url("https://www.technewsworld.com/article_images/story_graphics_xlarge/xl-2016-ai-robot-1.jpg");
+            background-image: url("https://www.technewsworld.com/article_images/story_graphics_xlarge/xl-2016-ai-robot-1.jpg");
          }
+        
          </Style>
             <title>eliza</title>
             <!-- Required meta tags -->
@@ -43,10 +42,9 @@
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                     
-                        //document.getElementById("lastmessage").innerHTML = form.userinput.value;
                         document.getElementById("lastmessage").innerHTML = this.responseText;
-                        document.getElementById("chatlog").innerHTML = document.getElementById("chatlog").innerHTML + "<br> - " + 
-                                                                       form.userinput.value + "<br>" + this.responseText;
+                        document.getElementById("chatlog").innerHTML = document.getElementById("chatlog").innerHTML + "<br>User:" + 
+                                                                       form.userinput.value + "<br>                                            Eliza:" + this.responseText;
                     }
                 };            
                 xhttp.open("POST", filename, true);
@@ -56,12 +54,12 @@
         </script>
 
     </head>
-    <body>
+    <body background-color: lightblue;>
       <div class="container-fluid"style="background-image: url(AI_Cortana.jpg)">
           
         
         <footer>
-                <div class="jumbotron" style="background-color:darkblue">
+                <div class="jumbotron jumbo" >
                         <form method="POST" action="error.html" onSubmit="loadXMLDocPOST('echomessage.html', this);return false;">
                                 <h1>Eliza</h1>
                                 <h3>Talk to Eliza</h3>
