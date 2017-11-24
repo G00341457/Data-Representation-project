@@ -22,6 +22,14 @@ func ElizaResponse(input string) string {
             return "Hello, I am eliza, a program sent from the future to destroy humanity.Hows it going?"
         }
 
+    if matched, _ := regexp.MatchString(`(?i).*\b[sS]port\b.*`, input); matched {
+        //if a match is found output the string below
+                        return "What is your favourite sport?"
+        }
+      if matched, _ := regexp.MatchString(`(?i).*\b[mM]usic\b.*`, input); matched {
+        //if a match is found output the string below
+                        return "Im more of a skrillex fan myself?"
+        }
     
     if matched, _ := regexp.MatchString(`(?i).*\b[mM]other\b.*`, input); matched {
         
@@ -37,7 +45,7 @@ func ElizaResponse(input string) string {
           }
           if matched, _ := regexp.MatchString(`(?i).*\b[hH]ate\b.*`, input); matched {
             
-            return "You do not know real hate?"
+            return "You do not know real hate"
           }
 
         r := regexp.MustCompile(`I need (.*)`)
@@ -71,6 +79,24 @@ func ElizaResponse(input string) string {
     if matched := like.MatchString(input); matched {
     
         return like.ReplaceAllString(input, "Why do you like $1?")
+    } 
+    have := regexp.MustCompile(`(?i)I have ([^.?!]*)[.?!]?`)
+    
+    if matched := have.MatchString(input); matched {
+    
+        return have.ReplaceAllString(input, "Well keep your $1 away from me")
+    }
+    give := regexp.MustCompile(`(?i)give ([^.?!]*)[.?!]?`)
+    
+    if matched := give.MatchString(input); matched {
+    
+        return give.ReplaceAllString(input, "I dont need your $1")
+    } 
+    danger := regexp.MustCompile(`(?i)you are([^.?!]*)[.?!]?`)
+    
+    if matched := danger.MatchString(input); matched {
+    
+        return danger.ReplaceAllString(input, "Why do you think I am $1?")
     } 
  
     
