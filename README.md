@@ -18,5 +18,8 @@ The regular expressions Used to converse with Eliza are
 "Hey"
 "Father"
 "Mother"
+"life"
+
+
 
 
